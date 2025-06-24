@@ -94,26 +94,51 @@
 
         /* Navigation */
         nav {
-            background: #f5f5dc; /* Khaki background for nav, not upside down */
-            backdrop-filter: blur(20px);
             position: fixed;
             top: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: calc(1400px + 4rem); /* Match page wrapper width plus padding */
-            max-width: calc(100vw - 4rem); /* Responsive width */
+            width: 100vw;
+            max-width: 1500px;
+            min-width: 0;
             z-index: 1000;
-            border: 8px solid #c2b280; /* gold/brown scroll edge */
-            border-bottom: none; /* Remove bottom border for scroll effect */
+            border: none;
             transition: all 0.3s ease;
-            border-radius: 40px 40px 40px 40px; /* Rounded corners like scroll */
+            border-radius: 0;
+            overflow-x: visible;
+            overflow-y: visible;
+            background: none;
+        }
+        nav::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            background: #f5f5dc;
+            border-radius: 40px;
             box-shadow: 0 8px 32px rgba(0,0,0,0.25), 0 0 0 8px #c2b280 inset;
+            transform: scaleY(-1);
+            pointer-events: none;
+        }
+        nav > .nav-container,
+        nav > .logo-bg-nk {
+            position: relative;
+            z-index: 1;
+        }
+        nav::-webkit-scrollbar,
+        .nav-container::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Opera */
         }
 
         .nav-container {
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
+            position: relative;
+            width: 100%;
+            min-width: 0;
+            overflow-x: visible;
+            flex-wrap: wrap;
             padding: 1rem 2rem;
             gap: 2rem;
         }
@@ -137,8 +162,10 @@
             display: flex;
             list-style: none;
             gap: 2.5rem;
-            justify-content: flex-start;
-            flex: 1;
+            white-space: nowrap;
+            flex: 1 1 auto;
+            justify-content: center;
+            min-width: 0;
         }
 
         .nav-links a {
@@ -169,7 +196,6 @@
         .nav-social {
             display: flex;
             gap: 1rem;
-            justify-content: flex-end;
             flex: 0 0 auto;
         }
 
@@ -724,64 +750,24 @@
         }
 
         /* Responsive Design */
-        @media (max-width: 768px) {
-            .page-wrapper {
-                margin: 1rem;
-                border-width: 4px;
-            }
-
-            nav {
-                width: 100vw;
-                left: 0;
-                transform: none;
-                padding: 0.5rem 0;
-                border-radius: 0;
-            }
-
-            .nav-container {
-                flex-direction: column;
-                align-items: stretch;
-                padding: 0.5rem 0.5rem;
-                gap: 0.5rem;
-            }
-
-            .logo {
-                font-size: 1.5rem;
-                text-align: center;
-            }
-
-            .nav-links {
-                flex-direction: column;
-                align-items: center;
-                gap: 1rem;
-            }
-
+        @media (max-width: 900px) {
             .nav-links a {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
             }
-
-            .nav-social {
-                justify-content: center;
-                gap: 1rem;
+            .logo-bg-nk {
+                font-size: 3rem !important;
             }
+        }
 
-            .about-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-                gap: 2rem;
+        @media (max-width: 600px) {
+            .nav-links a {
+                font-size: 0.9rem;
             }
-
-            .contact-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
+            .logo-bg-nk {
+                display: none !important;
             }
-
-            .games-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .container {
-                padding: 0 1rem;
+            nav {
+                border-radius: 0;
             }
         }
     </style>

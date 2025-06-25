@@ -623,6 +623,7 @@
         /* Contact Section */
         .contact {
             background: #f0f0d8; /* Lighter khaki */
+            padding-bottom: 3.5rem;
         }
 
         .contact-content {
@@ -652,7 +653,7 @@
         .contact-item i {
             font-size: 1.5rem;
             color: #222;
-            margin-right: 1rem;
+            margin-right: 0.5rem;
             width: 30px;
         }
 
@@ -727,7 +728,7 @@
         .social-links a {
             color: #222;
             font-size: 1.5rem;
-            margin: 0 1rem;
+            margin: 0 0.7rem;
             transition: all 0.3s ease;
             display: inline-block;
         }
@@ -788,8 +789,8 @@
                             <li><a href="#contact">Contact</a></li>
                         </ul>
                         <div class="nav-social" style="display: flex; align-items: center; gap: 1rem; position: absolute; right: 0; top: 50%; transform: translateY(-50%);">
-                            <a href="#"><i class="fab fa-github"></i></a>
-                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://www.linkedin.com/in/nima-khaloozadeh/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://github.com/NimaKhh" target="_blank"><i class="fab fa-github"></i></a>
                         </div>
                     </div>
                 </div>
@@ -797,11 +798,16 @@
 
             <!-- Hero Section -->
             <section id="home" class="hero">
-                <div class="hero-content">
-                    <h1>NIMA KHALOOZADEH</h1>
-                    <p class="subtitle">Game Developer • Full-Stack Developer</p>
-                    <p class="title">Creating immersive digital experiences</p>
-                    <a href="#contact" class="cta-button">Get In Touch</a>
+                <div class="hero-content" style="margin-top: -60px; display: flex; align-items: flex-start; gap: 2.5rem; justify-content: flex-start;">
+                    <div style="flex-shrink: 0;">
+                        <img src="chessboard.png" alt="Chessboard" style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.12);">
+                    </div>
+                    <div style="flex: 1;">
+                        <h1 style="margin-top: 2.5rem;">NIMA KHALOOZADEH</h1>
+                        <p class="subtitle">Game Developer • 3D Programmer</p>
+                        <p style="text-align: left; max-width: 800px; margin: 4.2rem auto 1.5rem auto; font-size: 1.35rem; animation: fadeInUp 1s ease 0.3s both;">I am passionate about building games and web applications that blend creativity with technology. My work focuses on delivering engaging, user-centered experiences through code and design.</p>
+                        <a href="#contact" class="cta-button" style="margin-top: 1.2rem; display: inline-block;">Let's Collaborate!</a>
+                    </div>
                 </div>
             </section>
 
@@ -917,18 +923,21 @@
             <!-- Contact Section -->
             <section id="contact" class="contact">
                 <div class="container">
-                    <h2 class="section-title">Get In Touch</h2>
-                    <p class="section-subtitle">Ready to collaborate on your next project? Let's create something amazing together!</p>
+                    <h2 class="section-title">Let's Collaborate!</h2>
+                    <p class="section-subtitle">Feel free to reach out to me via email or connect with me on LinkedIn.<br>I look forward to hearing from you!</p>
                     <div class="contact-content">
                         <div class="contact-info">
-                            <div class="social-links" style="margin-bottom:2rem;">
-                                <a href="#"><i class="fab fa-github"></i></a>
-                                <a href="#"><i class="fab fa-linkedin"></i></a>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-envelope"></i>
-                                <span>nima.khaloozadeh@example.com</span>
-                            </div>
+                            <!-- Other contact info can go here if needed -->
+                        </div>
+                    </div>
+                    <div style="display: flex; flex-direction: column; align-items: center; margin-top: 0.2rem;">
+                        <div class="contact-item" style="justify-content: center; margin-bottom: 1.2rem;">
+                            <i class="fas fa-envelope"></i>
+                            <span>n.khaloozadeh2-2023@hull.ac.uk</span>
+                        </div>
+                        <div class="social-links" style="margin-bottom:1rem; display: flex; justify-content: center;">
+                            <a href="https://www.linkedin.com/in/nima-khaloozadeh/" target="_blank"><i class="fab fa-linkedin" style="font-size:2.0rem;"></i></a>
+                            <a href="https://github.com/NimaKhh" target="_blank"><i class="fab fa-github" style="font-size:2.0rem;"></i></a>
                         </div>
                     </div>
                 </div>

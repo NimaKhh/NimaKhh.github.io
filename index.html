@@ -443,6 +443,99 @@
             justify-content: center;
         }
 
+        /* .projects-grid .project-card:last-child {
+            grid-column: 1 / -1;
+            justify-self: center;
+        } */
+
+        /* Full Project Carousel */
+        .full-project-carousel {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .full-project-slides {
+            display: flex;
+            width: 300%; /* 3 slides for Game Jam Games */
+            transition: transform 0.3s ease;
+        }
+
+        .full-project-slide {
+            width: 33.333%;
+            flex-shrink: 0;
+        }
+
+        /* Special styling for the last project (6 slides) */
+        .project-card:last-child .full-project-slides {
+            width: 600%; /* 6 slides */
+        }
+
+        .project-card:last-child .full-project-slide {
+            width: 16.666%;
+        }
+
+        .full-project-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(139, 0, 0, 0.7);
+            color: #f5f5dc;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+            z-index: 10;
+            pointer-events: auto;
+            user-select: none;
+            margin-top: 150px; /* Move buttons down to middle of text section */
+        }
+
+        .full-project-nav:hover {
+            background: rgba(139, 0, 0, 0.9);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .full-project-nav.prev {
+            left: 10px;
+        }
+
+        .full-project-nav.next {
+            right: 10px;
+        }
+
+        .full-project-dots {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 6px;
+            z-index: 10;
+        }
+
+        .full-project-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(139, 0, 0, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            pointer-events: auto;
+            user-select: none;
+        }
+
+        .full-project-dot.active {
+            background: #8B0000;
+            transform: scale(1.2);
+        }
+
         .project-card {
             background: var(--white); /* Now khaki */
             border-radius: 15px;
@@ -557,8 +650,8 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background: rgba(139, 0, 0, 0.7);
-            color: #f5f5dc;
+            background: rgba(245, 245, 220, 0.7);
+            color: #8B0000;
             border: none;
             width: 30px;
             height: 30px;
@@ -575,7 +668,7 @@
         }
 
         .project-nav:hover {
-            background: rgba(139, 0, 0, 0.9);
+            background: rgba(245, 245, 220, 0.9);
             transform: translateY(-50%) scale(1.1);
         }
 
@@ -892,7 +985,7 @@
                                 </div>
                             </div>
                             <div class="project-content">
-                                <h3>3D Graphics Engine</h3>
+                                <h3>DirectX 12 Distributed 3D Physics Simulation</h3>
                                 <p>A custom 3D graphics engine built from scratch using OpenGL and C++. Features advanced lighting, particle systems, and real-time rendering capabilities.</p>
                                 <div class="project-links">
                                     <a href="#"><i class="fab fa-github"></i> View Code</a>
@@ -934,7 +1027,7 @@
                                 </div>
                             </div>
                             <div class="project-content">
-                                <h3>AI Learning Platform</h3>
+                                <h3>DirectX 11 2.5D Platformer</h3>
                                 <p>An interactive platform for teaching AI and machine learning concepts through gamified experiences. Built with React, Python, and TensorFlow.</p>
                                 <div class="project-links">
                                     <a href="#"><i class="fab fa-github"></i> View Code</a>
@@ -976,7 +1069,7 @@
                                 </div>
                             </div>
                             <div class="project-content">
-                                <h3>Mobile Game Framework</h3>
+                                <h3>Multiplayer VR Croquet Game</h3>
                                 <p>A cross-platform mobile game development framework that simplifies the creation of 2D and 3D games for iOS and Android platforms.</p>
                                 <div class="project-links">
                                     <a href="#"><i class="fab fa-github"></i> View Code</a>
@@ -985,86 +1078,409 @@
                             </div>
                         </div>
                         <div class="project-card">
-                            <div class="project-carousel">
-                                <div class="project-slides">
-                                    <div class="project-slide">
-                                        <div class="project-image">
-                                            <i class="fas fa-chart-line"></i>
+                            <div class="full-project-carousel">
+                                <div class="full-project-slides">
+                                    <div class="full-project-slide">
+                                        <div class="project-carousel">
+                                            <div class="project-slides">
+                                                <div class="project-slide">
+                                                    <div class="project-image">
+                                                        <i class="fas fa-gamepad"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="project-slide">
+                                                    <div class="project-slide-content">
+                                                        <div>
+                                                            <h4>48-Hour Challenge</h4>
+                                                            <p>Rapid game development with creative constraints and time pressure</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="project-slide">
+                                                    <div class="project-slide-content">
+                                                        <div>
+                                                            <h4>Innovation</h4>
+                                                            <p>Unique gameplay mechanics and experimental design approaches</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button class="project-nav prev">‹</button>
+                                            <button class="project-nav next">›</button>
+                                            <div class="project-dots">
+                                                <span class="project-dot active"></span>
+                                                <span class="project-dot"></span>
+                                                <span class="project-dot"></span>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="project-slide">
-                                        <div class="project-slide-content">
-                                            <div>
-                                                <h4>Real-time Analytics</h4>
-                                                <p>Live player behavior tracking with interactive dashboards</p>
+                                        <div class="project-content">
+                                            <h3>Game Jam Games</h3>
+                                            <p>Collection of games created during various game jams, showcasing rapid prototyping skills and creative problem-solving under time constraints.</p>
+                                            <div class="project-links">
+                                                <a href="#"><i class="fab fa-github"></i> View Code</a>
+                                                <a href="#"><i class="fas fa-play"></i> Play</a>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="project-slide">
-                                        <div class="project-slide-content">
-                                            <div>
-                                                <h4>Data Insights</h4>
-                                                <p>Advanced metrics and predictive analytics for game optimization</p>
+                                    <div class="full-project-slide">
+                                        <div class="project-carousel">
+                                            <div class="project-slides">
+                                                <div class="project-slide">
+                                                    <div class="project-image">
+                                                        <i class="fas fa-clock"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="project-slide">
+                                                    <div class="project-slide-content">
+                                                        <div>
+                                                            <h4>Time Management</h4>
+                                                            <p>Efficient development workflows and rapid iteration cycles</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="project-slide">
+                                                    <div class="project-slide-content">
+                                                        <div>
+                                                            <h4>Team Collaboration</h4>
+                                                            <p>Working with diverse teams under tight deadlines</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button class="project-nav prev">‹</button>
+                                            <button class="project-nav next">›</button>
+                                            <div class="project-dots">
+                                                <span class="project-dot active"></span>
+                                                <span class="project-dot"></span>
+                                                <span class="project-dot"></span>
+                                            </div>
+                                        </div>
+                                        <div class="project-content">
+                                            <h3>Bubble Up!</h3>
+                                            <p>Fast-paced game development challenges that test creativity, technical skills, and ability to deliver complete experiences under pressure.</p>
+                                            <div class="project-links">
+                                                <a href="#"><i class="fab fa-github"></i> View Code</a>
+                                                <a href="#"><i class="fas fa-users"></i> Team</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="full-project-slide">
+                                        <div class="project-carousel">
+                                            <div class="project-slides">
+                                                <div class="project-slide">
+                                                    <div class="project-image">
+                                                        <i class="fas fa-trophy"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="project-slide">
+                                                    <div class="project-slide-content">
+                                                        <div>
+                                                            <h4>Achievements</h4>
+                                                            <p>Recognition and awards from various game jam competitions</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="project-slide">
+                                                    <div class="project-slide-content">
+                                                        <div>
+                                                            <h4>Portfolio Growth</h4>
+                                                            <p>Building a diverse collection of innovative game concepts</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button class="project-nav prev">‹</button>
+                                            <button class="project-nav next">›</button>
+                                            <div class="project-dots">
+                                                <span class="project-dot active"></span>
+                                                <span class="project-dot"></span>
+                                                <span class="project-dot"></span>
+                                            </div>
+                                        </div>
+                                        <div class="project-content">
+                                            <h3>Entropy Game</h3>
+                                            <p>Award-winning entries and innovative concepts that demonstrate creative thinking and technical execution in competitive game development.</p>
+                                            <div class="project-links">
+                                                <a href="#"><i class="fab fa-github"></i> View Code</a>
+                                                <a href="#"><i class="fas fa-award"></i> Awards</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <button class="project-nav prev">‹</button>
-                                <button class="project-nav next">›</button>
-                                <div class="project-dots">
-                                    <span class="project-dot active"></span>
-                                    <span class="project-dot"></span>
-                                    <span class="project-dot"></span>
-                                </div>
-                            </div>
-                            <div class="project-content">
-                                <h3>Data Visualization Tool</h3>
-                                <p>Real-time data visualization dashboard for game analytics and player behavior tracking. Built with D3.js and WebGL for high-performance rendering.</p>
-                                <div class="project-links">
-                                    <a href="#"><i class="fab fa-github"></i> View Code</a>
-                                    <a href="#"><i class="fas fa-external-link-alt"></i> Live</a>
+                                <button class="full-project-nav prev">‹</button>
+                                <button class="full-project-nav next">›</button>
+                                <div class="full-project-dots">
+                                    <span class="full-project-dot active"></span>
+                                    <span class="full-project-dot"></span>
+                                    <span class="full-project-dot"></span>
                                 </div>
                             </div>
                         </div>
                         <div class="project-card">
-                            <div class="project-carousel">
-                                <div class="project-slides">
-                                    <div class="project-slide">
-                                        <div class="project-image">
-                                            <i class="fas fa-network-wired"></i>
+                            <div class="full-project-carousel">
+                                <div class="full-project-slides">
+                                    <div class="full-project-slide">
+                                        <div class="project-carousel">
+                                            <div class="project-slides">
+                                                <div class="project-slide">
+                                                    <div class="project-image">
+                                                        <i class="fas fa-graduation-cap"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="project-slide">
+                                                    <div class="project-slide-content">
+                                                        <div>
+                                                            <h4>Academic Projects</h4>
+                                                            <p>Coursework and research projects developed during university studies</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="project-slide">
+                                                    <div class="project-slide-content">
+                                                        <div>
+                                                            <h4>Learning Journey</h4>
+                                                            <p>Progression of skills and techniques from beginner to advanced level</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button class="project-nav prev">‹</button>
+                                            <button class="project-nav next">›</button>
+                                            <div class="project-dots">
+                                                <span class="project-dot active"></span>
+                                                <span class="project-dot"></span>
+                                                <span class="project-dot"></span>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="project-slide">
-                                        <div class="project-slide-content">
-                                            <div>
-                                                <h4>Scalability</h4>
-                                                <p>Supports 10,000+ concurrent players with automatic load balancing</p>
+                                        <div class="project-content">
+                                            <h3>Games I made throughout my bachelor's studies</h3>
+                                            <p>Collection of games and interactive projects created during my computer science degree, showcasing the evolution of my programming and game development skills.</p>
+                                            <div class="project-links">
+                                                <a href="#"><i class="fab fa-github"></i> View Code</a>
+                                                <a href="#"><i class="fas fa-book"></i> Portfolio</a>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="project-slide">
-                                        <div class="project-slide-content">
-                                            <div>
-                                                <h4>Low Latency</h4>
-                                                <p>Sub-50ms synchronization with optimized networking protocols</p>
+                                    <div class="full-project-slide">
+                                        <div class="project-carousel">
+                                            <div class="project-slides">
+                                                <div class="project-slide">
+                                                    <div class="project-image">
+                                                        <i class="fas fa-code"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="project-slide">
+                                                    <div class="project-slide-content">
+                                                        <div>
+                                                            <h4>Programming Fundamentals</h4>
+                                                            <p>Core programming concepts and software engineering principles</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="project-slide">
+                                                    <div class="project-slide-content">
+                                                        <div>
+                                                            <h4>Data Structures</h4>
+                                                            <p>Efficient algorithms and data structure implementations</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button class="project-nav prev">‹</button>
+                                            <button class="project-nav next">›</button>
+                                            <div class="project-dots">
+                                                <span class="project-dot active"></span>
+                                                <span class="project-dot"></span>
+                                                <span class="project-dot"></span>
+                                            </div>
+                                        </div>
+                                        <div class="project-content">
+                                            <h3>Jetpack Joyride Game</h3>
+                                            <p>Early programming projects that established foundational knowledge in computer science and software development principles.</p>
+                                            <div class="project-links">
+                                                <a href="#"><i class="fab fa-github"></i> View Code</a>
+                                                <a href="#"><i class="fas fa-laptop-code"></i> Code</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="full-project-slide">
+                                        <div class="project-carousel">
+                                            <div class="project-slides">
+                                                <div class="project-slide">
+                                                    <div class="project-image">
+                                                        <i class="fas fa-gamepad"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="project-slide">
+                                                    <div class="project-slide-content">
+                                                        <div>
+                                                            <h4>Game Development</h4>
+                                                            <p>Interactive games and simulations for learning and entertainment</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="project-slide">
+                                                    <div class="project-slide-content">
+                                                        <div>
+                                                            <h4>Graphics Programming</h4>
+                                                            <p>Real-time rendering and visual effects implementation</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button class="project-nav prev">‹</button>
+                                            <button class="project-nav next">›</button>
+                                            <div class="project-dots">
+                                                <span class="project-dot active"></span>
+                                                <span class="project-dot"></span>
+                                                <span class="project-dot"></span>
+                                            </div>
+                                        </div>
+                                        <div class="project-content">
+                                            <h3>Othello Board Game</h3>
+                                            <p>Interactive games and simulations that demonstrate practical application of computer graphics and game development concepts.</p>
+                                            <div class="project-links">
+                                                <a href="#"><i class="fab fa-github"></i> View Code</a>
+                                                <a href="#"><i class="fas fa-play"></i> Play</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="full-project-slide">
+                                        <div class="project-carousel">
+                                            <div class="project-slides">
+                                                <div class="project-slide">
+                                                    <div class="project-image">
+                                                        <i class="fas fa-mobile-alt"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="project-slide">
+                                                    <div class="project-slide-content">
+                                                        <div>
+                                                            <h4>Mobile Development</h4>
+                                                            <p>Cross-platform mobile applications and games</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="project-slide">
+                                                    <div class="project-slide-content">
+                                                        <div>
+                                                            <h4>User Experience</h4>
+                                                            <p>Intuitive interfaces and responsive design principles</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button class="project-nav prev">‹</button>
+                                            <button class="project-nav next">›</button>
+                                            <div class="project-dots">
+                                                <span class="project-dot active"></span>
+                                                <span class="project-dot"></span>
+                                                <span class="project-dot"></span>
+                                            </div>
+                                        </div>
+                                        <div class="project-content">
+                                            <h3>TETRIS Game</h3>
+                                            <p>Mobile applications and games that explore touch interfaces, responsive design, and cross-platform development techniques.</p>
+                                            <div class="project-links">
+                                                <a href="#"><i class="fab fa-github"></i> View Code</a>
+                                                <a href="#"><i class="fab fa-android"></i> Mobile</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="full-project-slide">
+                                        <div class="project-carousel">
+                                            <div class="project-slides">
+                                                <div class="project-slide">
+                                                    <div class="project-image">
+                                                        <i class="fas fa-brain"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="project-slide">
+                                                    <div class="project-slide-content">
+                                                        <div>
+                                                            <h4>AI Integration</h4>
+                                                            <p>Machine learning algorithms and intelligent game systems</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="project-slide">
+                                                    <div class="project-slide-content">
+                                                        <div>
+                                                            <h4>Advanced Concepts</h4>
+                                                            <p>Complex algorithms and cutting-edge technology implementation</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button class="project-nav prev">‹</button>
+                                            <button class="project-nav next">›</button>
+                                            <div class="project-dots">
+                                                <span class="project-dot active"></span>
+                                                <span class="project-dot"></span>
+                                                <span class="project-dot"></span>
+                                            </div>
+                                        </div>
+                                        <div class="project-content">
+                                            <h3>Puxxle! (2D Jigsaw Puzzle Game)</h3>
+                                            <p>Advanced projects incorporating artificial intelligence, machine learning, and sophisticated algorithms to create intelligent game experiences.</p>
+                                            <div class="project-links">
+                                                <a href="#"><i class="fab fa-github"></i> View Code</a>
+                                                <a href="#"><i class="fas fa-robot"></i> AI</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="full-project-slide">
+                                        <div class="project-carousel">
+                                            <div class="project-slides">
+                                                <div class="project-slide">
+                                                    <div class="project-image">
+                                                        <i class="fas fa-trophy"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="project-slide">
+                                                    <div class="project-slide-content">
+                                                        <div>
+                                                            <h4>Capstone Project</h4>
+                                                            <p>Comprehensive final year project showcasing all learned skills</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="project-slide">
+                                                    <div class="project-slide-content">
+                                                        <div>
+                                                            <h4>Research Integration</h4>
+                                                            <p>Academic research combined with practical implementation</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button class="project-nav prev">‹</button>
+                                            <button class="project-nav next">›</button>
+                                            <div class="project-dots">
+                                                <span class="project-dot active"></span>
+                                                <span class="project-dot"></span>
+                                                <span class="project-dot"></span>
+                                            </div>
+                                        </div>
+                                        <div class="project-content">
+                                            <h3>Angry Birds Game</h3>
+                                            <p>Final year capstone project that represents the culmination of all skills and knowledge acquired throughout the computer science degree program.</p>
+                                            <div class="project-links">
+                                                <a href="#"><i class="fab fa-github"></i> View Code</a>
+                                                <a href="#"><i class="fas fa-star"></i> Capstone</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <button class="project-nav prev">‹</button>
-                                <button class="project-nav next">›</button>
-                                <div class="project-dots">
-                                    <span class="project-dot active"></span>
-                                    <span class="project-dot"></span>
-                                    <span class="project-dot"></span>
-                                </div>
-                            </div>
-                            <div class="project-content">
-                                <h3>Multiplayer Game Server</h3>
-                                <p>A scalable multiplayer game server architecture supporting thousands of concurrent players with real-time synchronization and low-latency networking.</p>
-                                <div class="project-links">
-                                    <a href="#"><i class="fab fa-github"></i> View Code</a>
-                                    <a href="#"><i class="fab fa-server"></i> API</a>
+                                <button class="full-project-nav prev">‹</button>
+                                <button class="full-project-nav next">›</button>
+                                <div class="full-project-dots">
+                                    <span class="full-project-dot active"></span>
+                                    <span class="full-project-dot"></span>
+                                    <span class="full-project-dot"></span>
+                                    <span class="full-project-dot"></span>
+                                    <span class="full-project-dot"></span>
+                                    <span class="full-project-dot"></span>
                                 </div>
                             </div>
                         </div>
@@ -1309,6 +1725,88 @@
             }
         }
         
+        // Full Project Carousel functionality
+        class FullProjectCarousel {
+            constructor(carousel) {
+                this.carousel = carousel;
+                this.slides = carousel.querySelector('.full-project-slides');
+                this.dots = carousel.querySelectorAll('.full-project-dot');
+                this.prevBtn = carousel.querySelector('.full-project-nav.prev');
+                this.nextBtn = carousel.querySelector('.full-project-nav.next');
+                this.currentSlide = 0;
+                this.totalSlides = this.dots.length;
+                
+                // Initialize inner carousels
+                this.innerCarousels = carousel.querySelectorAll('.project-carousel');
+                this.innerCarousels.forEach(innerCarousel => {
+                    new ProjectCarousel(innerCarousel);
+                });
+                
+                this.init();
+            }
+            
+            init() {
+                if (this.prevBtn) {
+                    this.prevBtn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        this.prevSlide();
+                    });
+                }
+                
+                if (this.nextBtn) {
+                    this.nextBtn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        this.nextSlide();
+                    });
+                }
+                
+                this.dots.forEach((dot, index) => {
+                    dot.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        this.goToSlide(index);
+                    });
+                });
+            }
+            
+            prevSlide() {
+                this.currentSlide = (this.currentSlide - 1 + this.totalSlides) % this.totalSlides;
+                this.updateCarousel();
+            }
+            
+            nextSlide() {
+                this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
+                this.updateCarousel();
+            }
+            
+            goToSlide(index) {
+                this.currentSlide = index;
+                this.updateCarousel();
+            }
+            
+            updateCarousel() {
+                // Determine slide width based on total slides
+                let slideWidth;
+                if (this.totalSlides === 3) {
+                    slideWidth = 33.333; // Game Jam Games
+                } else if (this.totalSlides === 6) {
+                    slideWidth = 16.666; // Last project
+                } else {
+                    slideWidth = 50; // Default fallback
+                }
+                
+                const translateX = -(this.currentSlide * slideWidth);
+                this.slides.style.transform = `translateX(${translateX}%)`;
+                
+                // Update dots
+                this.dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === this.currentSlide);
+                });
+            }
+        }
+
         // Initialize all project carousels
         document.addEventListener('DOMContentLoaded', function() {
             const carousels = document.querySelectorAll('.project-carousel');
@@ -1317,6 +1815,15 @@
             carousels.forEach((carousel, index) => {
                 console.log(`Initializing carousel ${index + 1}:`, carousel);
                 new ProjectCarousel(carousel);
+            });
+
+            // Initialize full project carousels
+            const fullCarousels = document.querySelectorAll('.full-project-carousel');
+            console.log('Found full carousels:', fullCarousels.length);
+            
+            fullCarousels.forEach((carousel, index) => {
+                console.log(`Initializing full carousel ${index + 1}:`, carousel);
+                new FullProjectCarousel(carousel);
             });
         });
 

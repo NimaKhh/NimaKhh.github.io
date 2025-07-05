@@ -1639,10 +1639,12 @@
                 let endX = 0;
                 
                 this.carousel.addEventListener('touchstart', (e) => {
+                    e.stopPropagation();
                     startX = e.touches[0].clientX;
                 });
                 
                 this.carousel.addEventListener('touchend', (e) => {
+                    e.stopPropagation();
                     endX = e.changedTouches[0].clientX;
                     this.handleSwipe(startX, endX);
                 });
@@ -1652,6 +1654,7 @@
                 let startPos = 0;
                 
                 this.carousel.addEventListener('mousedown', (e) => {
+                    e.stopPropagation();
                     isDragging = true;
                     startPos = e.clientX;
                 });
@@ -1662,6 +1665,7 @@
                 });
                 
                 this.carousel.addEventListener('mouseup', (e) => {
+                    e.stopPropagation();
                     if (isDragging) {
                         const endPos = e.clientX;
                         const diff = startPos - endPos;
@@ -1676,7 +1680,8 @@
                     }
                 });
                 
-                this.carousel.addEventListener('mouseleave', () => {
+                this.carousel.addEventListener('mouseleave', (e) => {
+                    e.stopPropagation();
                     isDragging = false;
                 });
             }
@@ -1769,6 +1774,76 @@
                         this.goToSlide(index);
                     });
                 });
+                
+                // Touch/swipe support
+                let startX = 0;
+                let endX = 0;
+                
+                this.carousel.addEventListener('touchstart', (e) => {
+                    // Only start if not on an image carousel
+                    if (!e.target.closest('.project-carousel')) {
+                        startX = e.touches[0].clientX;
+                    } else {
+                        startX = null;
+                    }
+                });
+                
+                this.carousel.addEventListener('touchend', (e) => {
+                    if (startX !== null && !e.target.closest('.project-carousel')) {
+                        endX = e.changedTouches[0].clientX;
+                        this.handleSwipe(startX, endX);
+                    }
+                });
+                
+                // Mouse drag support
+                let isDragging = false;
+                let startPos = 0;
+                
+                this.carousel.addEventListener('mousedown', (e) => {
+                    if (!e.target.closest('.project-carousel')) {
+                        isDragging = true;
+                        startPos = e.clientX;
+                    } else {
+                        isDragging = false;
+                    }
+                });
+                
+                this.carousel.addEventListener('mousemove', (e) => {
+                    if (!isDragging) return;
+                    e.preventDefault();
+                });
+                
+                this.carousel.addEventListener('mouseup', (e) => {
+                    e.stopPropagation();
+                    if (isDragging) {
+                        const endPos = e.clientX;
+                        const diff = startPos - endPos;
+                        if (Math.abs(diff) > 50) {
+                            if (diff > 0) {
+                                this.nextSlide();
+                            } else {
+                                this.prevSlide();
+                            }
+                        }
+                        isDragging = false;
+                    }
+                });
+                
+                this.carousel.addEventListener('mouseleave', () => {
+                    e.stopPropagation();
+                    isDragging = false;
+                });
+            }
+            
+            handleSwipe(startX, endX) {
+                const diff = startX - endX;
+                if (Math.abs(diff) > 50) {
+                    if (diff > 0) {
+                        this.nextSlide();
+                    } else {
+                        this.prevSlide();
+                    }
+                }
             }
             
             prevSlide() {

@@ -299,7 +299,7 @@
 
         .section-title {
             text-align: center;
-            font-size: clamp(2rem, 4vw, 3rem);
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
             margin-bottom: 1rem;
             color: #222;
             font-weight: 700;
@@ -315,62 +315,9 @@
             margin-right: auto;
         }
 
-        /* About Section */
-        .about {
+        /* Skills Section */
+        .skills {
             background: var(--white);
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .about-text h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            color: #222;
-            font-weight: 700;
-        }
-
-        .about-text p {
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-            color: #222;
-            line-height: 1.8;
-        }
-
-        .profile-image {
-            width: 100%;
-            max-width: 400px;
-            height: 400px;
-            border-radius: 20px;
-            background: var(--gradient-secondary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: var(--shadow-xl);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .profile-image::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain2" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain2)"/></svg>');
-            opacity: 0.3;
-        }
-
-        .profile-image i {
-            font-size: 8rem;
-            color: #f5f5dc; /* Khaki color for visibility on dark red background */
-            z-index: 2;
-            position: relative;
         }
 
         /* Published Games Section */
@@ -491,8 +438,9 @@
 
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
             gap: 2rem;
+            justify-content: center;
         }
 
         .project-card {
@@ -500,18 +448,34 @@
             border-radius: 15px;
             overflow: hidden;
             box-shadow: var(--shadow-md);
-            transition: all 0.3s ease;
             border: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
         }
 
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
+        .project-carousel {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .project-slides {
+            display: flex;
+            width: 300%; /* 3 slides */
+            height: 100%;
+            transition: transform 0.3s ease;
+        }
+
+        .project-slide {
+            width: 33.333%;
+            height: 100%;
+            flex-shrink: 0;
+            position: relative;
         }
 
         .project-image {
             width: 100%;
-            height: 200px;
+            height: 100%;
             background: var(--gradient-secondary);
             display: flex;
             align-items: center;
@@ -536,6 +500,91 @@
             color: #f5f5dc; /* Khaki color for visibility on dark red background */
             z-index: 2;
             position: relative;
+        }
+
+        .project-slide-content {
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            text-align: center;
+            color: #f5f5dc;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .project-slide-content h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: #f5f5dc;
+        }
+
+        .project-slide-content p {
+            color: #f5f5dc;
+            opacity: 0.9;
+        }
+
+        .project-dots {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 6px;
+            z-index: 3;
+        }
+
+        .project-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(245, 245, 220, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            pointer-events: auto;
+            user-select: none;
+        }
+
+        .project-dot.active {
+            background: #f5f5dc;
+            transform: scale(1.2);
+        }
+
+        .project-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(139, 0, 0, 0.7);
+            color: #f5f5dc;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            transition: all 0.3s ease;
+            z-index: 3;
+            pointer-events: auto;
+            user-select: none;
+        }
+
+        .project-nav:hover {
+            background: rgba(139, 0, 0, 0.9);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .project-nav.prev {
+            left: 10px;
+        }
+
+        .project-nav.next {
+            right: 10px;
         }
 
         .project-content {
@@ -590,22 +639,17 @@
         }
 
         .skill-card {
-            background: var(--light-bg);
+            background: var(--white);
             padding: 2rem;
             border-radius: 15px;
             text-align: center;
-            transition: all 0.3s ease;
+            box-shadow: var(--shadow-md);
             border: 1px solid rgba(0, 0, 0, 0.05);
-        }
-
-        .skill-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
         }
 
         .skill-card i {
             font-size: 3rem;
-            color: #8B0000; /* Dark red instead of gradient */
+            color: #8B0000;
             margin-bottom: 1rem;
         }
 
@@ -785,7 +829,7 @@
                         <ul class="nav-links" style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); margin: 0;">
                             <li><a href="#home">Home</a></li>
                             <li><a href="#projects">Projects</a></li>
-                            <li><a href="#about">About</a></li>
+                            <li><a href="#skills">Skills</a></li>
                             <li><a href="#contact">Contact</a></li>
                         </ul>
                         <div class="nav-social" style="display: flex; align-items: center; gap: 1rem; position: absolute; right: 0; top: 50%; transform: translateY(-50%);">
@@ -802,7 +846,7 @@
                     <h1 style="margin-top: 3.5rem;">NIMA KHALOOZADEH</h1>
                     <p class="subtitle">Game Developer • 3D Programmer</p>
                     <div style="display: flex; align-items: flex-start; gap: 0.7rem;">
-                        <img src="redblackchess.png" alt="Chessboard" style="width: 160px; height: 160px; object-fit: cover; margin-top: 3.5rem; animation: fadeInUp 1s ease 0.3s both;">
+                        <img src="redblackchess.png" alt="Chessboard" style="width: 100px; height: 100px; object-fit: cover; margin-top: 3.9rem; animation: fadeInUp 1s ease 0.3s both;">
                         <p style="text-align: left; max-width: 1000px; margin: 4.2rem 0 1.5rem 0; font-size: 1.35rem; animation: fadeInUp 1s ease 0.3s both;">My true passion is creating amazing, immersive games that push the boundaries of what's possible. While I love game development and design, I'm especially excited to apply my computer science, programming, and math skills to innovate within the gaming industry—building unique, game-specific, high-performance experiences that go beyond what traditional tools offer.</p>
                     </div>
                     <a href="#contact" class="cta-button" style="margin-top: 1.2rem; display: inline-block;">Let's Collaborate!</a>
@@ -812,12 +856,40 @@
             <!-- Projects Section -->
             <section id="projects" class="projects">
                 <div class="container">
-                    <h2 class="section-title">Projects & Experiments</h2>
-                    <p class="section-subtitle">Innovative projects showcasing technical skills and creative problem-solving</p>
+                    <h2 class="section-title">Game Projects</h2>
                     <div class="projects-grid">
                         <div class="project-card">
-                            <div class="project-image">
-                                <i class="fas fa-cube"></i>
+                            <div class="project-carousel">
+                                <div class="project-slides">
+                                    <div class="project-slide">
+                                        <div class="project-image">
+                                            <i class="fas fa-cube"></i>
+                                        </div>
+                                    </div>
+                                    <div class="project-slide">
+                                        <div class="project-slide-content">
+                                            <div>
+                                                <h4>Advanced Features</h4>
+                                                <p>Real-time shadows, dynamic lighting, and particle systems with GPU acceleration</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="project-slide">
+                                        <div class="project-slide-content">
+                                            <div>
+                                                <h4>Performance</h4>
+                                                <p>Optimized rendering pipeline achieving 60+ FPS on modern hardware</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="project-nav prev">‹</button>
+                                <button class="project-nav next">›</button>
+                                <div class="project-dots">
+                                    <span class="project-dot active"></span>
+                                    <span class="project-dot"></span>
+                                    <span class="project-dot"></span>
+                                </div>
                             </div>
                             <div class="project-content">
                                 <h3>3D Graphics Engine</h3>
@@ -829,8 +901,37 @@
                             </div>
                         </div>
                         <div class="project-card">
-                            <div class="project-image">
-                                <i class="fas fa-brain"></i>
+                            <div class="project-carousel">
+                                <div class="project-slides">
+                                    <div class="project-slide">
+                                        <div class="project-image">
+                                            <i class="fas fa-brain"></i>
+                                        </div>
+                                    </div>
+                                    <div class="project-slide">
+                                        <div class="project-slide-content">
+                                            <div>
+                                                <h4>Interactive Learning</h4>
+                                                <p>Gamified AI tutorials with real-time feedback and progress tracking</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="project-slide">
+                                        <div class="project-slide-content">
+                                            <div>
+                                                <h4>ML Models</h4>
+                                                <p>Pre-trained models for computer vision, NLP, and reinforcement learning</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="project-nav prev">‹</button>
+                                <button class="project-nav next">›</button>
+                                <div class="project-dots">
+                                    <span class="project-dot active"></span>
+                                    <span class="project-dot"></span>
+                                    <span class="project-dot"></span>
+                                </div>
                             </div>
                             <div class="project-content">
                                 <h3>AI Learning Platform</h3>
@@ -842,8 +943,37 @@
                             </div>
                         </div>
                         <div class="project-card">
-                            <div class="project-image">
-                                <i class="fas fa-mobile-alt"></i>
+                            <div class="project-carousel">
+                                <div class="project-slides">
+                                    <div class="project-slide">
+                                        <div class="project-image">
+                                            <i class="fas fa-mobile-alt"></i>
+                                        </div>
+                                    </div>
+                                    <div class="project-slide">
+                                        <div class="project-slide-content">
+                                            <div>
+                                                <h4>Cross-Platform</h4>
+                                                <p>Single codebase deployment to iOS, Android, and web platforms</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="project-slide">
+                                        <div class="project-slide-content">
+                                            <div>
+                                                <h4>Performance</h4>
+                                                <p>Optimized for 60 FPS gameplay with efficient memory management</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="project-nav prev">‹</button>
+                                <button class="project-nav next">›</button>
+                                <div class="project-dots">
+                                    <span class="project-dot active"></span>
+                                    <span class="project-dot"></span>
+                                    <span class="project-dot"></span>
+                                </div>
                             </div>
                             <div class="project-content">
                                 <h3>Mobile Game Framework</h3>
@@ -855,8 +985,37 @@
                             </div>
                         </div>
                         <div class="project-card">
-                            <div class="project-image">
-                                <i class="fas fa-chart-line"></i>
+                            <div class="project-carousel">
+                                <div class="project-slides">
+                                    <div class="project-slide">
+                                        <div class="project-image">
+                                            <i class="fas fa-chart-line"></i>
+                                        </div>
+                                    </div>
+                                    <div class="project-slide">
+                                        <div class="project-slide-content">
+                                            <div>
+                                                <h4>Real-time Analytics</h4>
+                                                <p>Live player behavior tracking with interactive dashboards</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="project-slide">
+                                        <div class="project-slide-content">
+                                            <div>
+                                                <h4>Data Insights</h4>
+                                                <p>Advanced metrics and predictive analytics for game optimization</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="project-nav prev">‹</button>
+                                <button class="project-nav next">›</button>
+                                <div class="project-dots">
+                                    <span class="project-dot active"></span>
+                                    <span class="project-dot"></span>
+                                    <span class="project-dot"></span>
+                                </div>
                             </div>
                             <div class="project-content">
                                 <h3>Data Visualization Tool</h3>
@@ -868,8 +1027,37 @@
                             </div>
                         </div>
                         <div class="project-card">
-                            <div class="project-image">
-                                <i class="fas fa-network-wired"></i>
+                            <div class="project-carousel">
+                                <div class="project-slides">
+                                    <div class="project-slide">
+                                        <div class="project-image">
+                                            <i class="fas fa-network-wired"></i>
+                                        </div>
+                                    </div>
+                                    <div class="project-slide">
+                                        <div class="project-slide-content">
+                                            <div>
+                                                <h4>Scalability</h4>
+                                                <p>Supports 10,000+ concurrent players with automatic load balancing</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="project-slide">
+                                        <div class="project-slide-content">
+                                            <div>
+                                                <h4>Low Latency</h4>
+                                                <p>Sub-50ms synchronization with optimized networking protocols</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="project-nav prev">‹</button>
+                                <button class="project-nav next">›</button>
+                                <div class="project-dots">
+                                    <span class="project-dot active"></span>
+                                    <span class="project-dot"></span>
+                                    <span class="project-dot"></span>
+                                </div>
                             </div>
                             <div class="project-content">
                                 <h3>Multiplayer Game Server</h3>
@@ -880,39 +1068,45 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="project-card">
-                            <div class="project-image">
-                                <i class="fas fa-palette"></i>
-                            </div>
-                            <div class="project-content">
-                                <h3>Procedural Art Generator</h3>
-                                <p>An AI-powered tool that generates unique game assets, textures, and environments using procedural algorithms and machine learning techniques.</p>
-                                <div class="project-links">
-                                    <a href="#"><i class="fab fa-github"></i> View Code</a>
-                                    <a href="#"><i class="fas fa-image"></i> Gallery</a>
-                                </div>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
             </section>
 
-            <!-- About Section -->
-            <section id="about" class="about">
+            <!-- Skills Section -->
+            <section id="skills" class="skills">
                 <div class="container">
-                    <h2 class="section-title">About Me</h2>
-                    <p class="section-subtitle">Passionate developer creating innovative solutions and engaging experiences</p>
-                    <div class="about-content">
-                        <div class="about-text">
-                            <h3>Creative Problem Solver</h3>
-                            <p>I'm a dedicated game developer and full-stack developer with a passion for creating immersive digital experiences. Whether it's building engaging games, developing robust web applications, or crafting beautiful user interfaces, I love turning complex ideas into elegant solutions.</p>
-                            <p>With expertise in modern game development frameworks, web technologies, and creative design, I focus on creating experiences that not only function flawlessly but also delight users and solve real-world problems.</p>
-                            <p>When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or sharing knowledge with the developer community. I believe in writing clean, maintainable code and staying up-to-date with the latest industry trends.</p>
+                    <h2 class="section-title">Skills</h2>
+                    <div class="skills-grid">
+                        <div class="skill-card">
+                            <i class="fas fa-gamepad"></i>
+                            <h3>Game Development</h3>
+                            <p>Unity, Unreal Engine, C#, C++, OpenGL, DirectX, Game Design, 3D Graphics Programming</p>
                         </div>
-                        <div class="about-image">
-                            <div class="profile-image">
-                                <i class="fas fa-gamepad"></i>
-                            </div>
+                        <div class="skill-card">
+                            <i class="fas fa-code"></i>
+                            <h3>Programming Languages</h3>
+                            <p>C++, C#, Python, JavaScript, TypeScript, Java, Rust, Assembly, GLSL/HLSL</p>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fas fa-mobile-alt"></i>
+                            <h3>Mobile Development</h3>
+                            <p>iOS, Android, React Native, Flutter, Mobile Game Optimization, Performance Tuning</p>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fas fa-brain"></i>
+                            <h3>AI & Machine Learning</h3>
+                            <p>TensorFlow, PyTorch, Computer Vision, NLP, Reinforcement Learning, Neural Networks</p>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fas fa-server"></i>
+                            <h3>Backend Development</h3>
+                            <p>Node.js, Python, Databases, APIs, Microservices, Cloud Computing, DevOps</p>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fas fa-palette"></i>
+                            <h3>Creative & Design</h3>
+                            <p>3D Modeling, Animation, UI/UX Design, Graphic Design, Sound Design, Creative Direction</p>
                         </div>
                     </div>
                 </div>
@@ -958,17 +1152,172 @@
             });
         });
 
-        // Form submission handling
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! I\'ll get back to you soon.');
-            this.reset();
-        });
+        // Form submission handling (only if form exists)
+        const form = document.querySelector('form');
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your message! I\'ll get back to you soon.');
+                this.reset();
+            });
+        }
 
         // Add scroll effect to navigation
         window.addEventListener('scroll', function() {
             const nav = document.querySelector('nav');
             // Navigation stays khaki - no color change on scroll
+        });
+
+        // Project carousel functionality
+        class ProjectCarousel {
+            constructor(carousel) {
+                this.carousel = carousel;
+                this.slides = carousel.querySelector('.project-slides');
+                this.dots = carousel.querySelectorAll('.project-dot');
+                this.prevBtn = carousel.querySelector('.project-nav.prev');
+                this.nextBtn = carousel.querySelector('.project-nav.next');
+                this.currentSlide = 0;
+                this.totalSlides = this.dots.length;
+                
+                // Debug logging
+                console.log('Carousel initialized:', {
+                    slides: this.slides,
+                    dots: this.dots.length,
+                    prevBtn: this.prevBtn,
+                    nextBtn: this.nextBtn
+                });
+                
+                this.init();
+            }
+            
+            init() {
+                if (this.prevBtn) {
+                    this.prevBtn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        console.log('Prev button clicked');
+                        this.prevSlide();
+                    });
+                }
+                
+                if (this.nextBtn) {
+                    this.nextBtn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        console.log('Next button clicked');
+                        this.nextSlide();
+                    });
+                }
+                
+                this.dots.forEach((dot, index) => {
+                    dot.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        console.log('Dot clicked:', index);
+                        this.goToSlide(index);
+                    });
+                });
+                
+                // Touch/swipe support
+                let startX = 0;
+                let endX = 0;
+                
+                this.carousel.addEventListener('touchstart', (e) => {
+                    startX = e.touches[0].clientX;
+                });
+                
+                this.carousel.addEventListener('touchend', (e) => {
+                    endX = e.changedTouches[0].clientX;
+                    this.handleSwipe(startX, endX);
+                });
+                
+                // Mouse drag support
+                let isDragging = false;
+                let startPos = 0;
+                
+                this.carousel.addEventListener('mousedown', (e) => {
+                    isDragging = true;
+                    startPos = e.clientX;
+                });
+                
+                this.carousel.addEventListener('mousemove', (e) => {
+                    if (!isDragging) return;
+                    e.preventDefault();
+                });
+                
+                this.carousel.addEventListener('mouseup', (e) => {
+                    if (isDragging) {
+                        const endPos = e.clientX;
+                        const diff = startPos - endPos;
+                        if (Math.abs(diff) > 50) {
+                            if (diff > 0) {
+                                this.nextSlide();
+                            } else {
+                                this.prevSlide();
+                            }
+                        }
+                        isDragging = false;
+                    }
+                });
+                
+                this.carousel.addEventListener('mouseleave', () => {
+                    isDragging = false;
+                });
+            }
+            
+            handleSwipe(startX, endX) {
+                const diff = startX - endX;
+                if (Math.abs(diff) > 50) {
+                    if (diff > 0) {
+                        this.nextSlide();
+                    } else {
+                        this.prevSlide();
+                    }
+                }
+            }
+            
+            prevSlide() {
+                this.currentSlide = (this.currentSlide - 1 + this.totalSlides) % this.totalSlides;
+                this.updateCarousel();
+            }
+            
+            nextSlide() {
+                this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
+                this.updateCarousel();
+            }
+            
+            goToSlide(index) {
+                this.currentSlide = index;
+                this.updateCarousel();
+            }
+            
+            updateCarousel() {
+                const translateX = -(this.currentSlide * 33.333);
+                console.log('Updating carousel:', {
+                    currentSlide: this.currentSlide,
+                    translateX: translateX
+                });
+                
+                if (this.slides) {
+                    this.slides.style.transform = `translateX(${translateX}%)`;
+                }
+                
+                // Update dots
+                this.dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === this.currentSlide);
+                });
+            }
+        }
+        
+        // Initialize all project carousels
+        document.addEventListener('DOMContentLoaded', function() {
+            const carousels = document.querySelectorAll('.project-carousel');
+            console.log('Found carousels:', carousels.length);
+            
+            carousels.forEach((carousel, index) => {
+                console.log(`Initializing carousel ${index + 1}:`, carousel);
+                new ProjectCarousel(carousel);
+            });
         });
 
         // Add intersection observer for animations
@@ -988,9 +1337,6 @@
 
         // Observe all cards and sections
         document.querySelectorAll('.project-card').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'all 0.6s ease';
             observer.observe(el);
         });
     </script>

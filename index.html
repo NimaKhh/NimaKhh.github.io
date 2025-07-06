@@ -1200,7 +1200,7 @@
                                             <h3><span style="float: right; margin-right: 0;">(2019)</span>Angry Birds Project</h3>
                                             <p>Final year capstone project that represents the culmination of all skills and knowledge acquired throughout the computer science degree program.</p>
                                             <div class="project-links">
-                                                <a href="https://nima-kh.itch.io/angry-birds-project" target="_blank"><i class="fas fa-play"></i> Play on itch.io</a>
+                                                <a href="https://nima-kh.itch.io/angry-birds-project" target="_blank"><i class="fab fa-itch-io"></i> Play on itch.io</a>
                                             </div>
                                         </div>
                                     </div>
@@ -1714,6 +1714,23 @@
                     e.stopPropagation();
                     isDragging = false;
                 });
+
+                // Mouse wheel (horizontal scroll) support
+                let wheelTimeout = null;
+                this.carousel.addEventListener('wheel', (e) => {
+                    if (wheelTimeout) return;
+                    // Always handle and preventDefault for image carousels
+                    if (Math.abs(e.deltaX) > Math.abs(e.deltaY) || e.shiftKey) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        if (e.deltaX > 0) {
+                            this.nextSlide();
+                        } else if (e.deltaX < 0) {
+                            this.prevSlide();
+                        }
+                        wheelTimeout = setTimeout(() => { wheelTimeout = null; }, 200);
+                    }
+                }, { passive: false });
             }
             
             handleSwipe(startX, endX) {
@@ -1863,6 +1880,24 @@
                     e.stopPropagation();
                     isDragging = false;
                 });
+
+                // Mouse wheel (horizontal scroll) support
+                let wheelTimeout = null;
+                this.carousel.addEventListener('wheel', (e) => {
+                    if (wheelTimeout) return;
+                    // Only handle if the element under the mouse is NOT inside a .project-carousel
+                    const el = document.elementFromPoint(e.clientX, e.clientY);
+                    if (el && el.closest('.project-carousel')) return;
+                    if (Math.abs(e.deltaX) > Math.abs(e.deltaY) || e.shiftKey) {
+                        e.preventDefault();
+                        if (e.deltaX > 0) {
+                            this.nextSlide();
+                        } else if (e.deltaX < 0) {
+                            this.prevSlide();
+                        }
+                        wheelTimeout = setTimeout(() => { wheelTimeout = null; }, 200);
+                    }
+                }, { passive: false });
             }
             
             handleSwipe(startX, endX) {

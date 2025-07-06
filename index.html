@@ -28,6 +28,7 @@
             --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
             --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
             --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            --gold: #c2b280;
         }
 
         body {
@@ -494,7 +495,7 @@
             z-index: 10;
             pointer-events: auto;
             user-select: none;
-            margin-top: 150px; /* Move buttons down to middle of text section */
+            margin-top: 150px;
         }
 
         .full-project-nav:hover {
@@ -898,16 +899,16 @@
         /* Responsive Design */
         @media (max-width: 900px) {
             .nav-links a {
-                font-size: 1.5rem;
+                font-size: 1.7rem;
             }
             .logo-bg-nk {
                 font-size: 6rem !important;
             }
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 700px) {
             .nav-links a {
-                font-size: 1.3rem;
+                font-size: 1.5rem;
             }
             
             .nav-social {
@@ -916,6 +917,209 @@
             nav {
                 border-radius: 0;
             }
+        }
+
+        body.dark-mode {
+            --primary-color: #f5f5dc;
+            --secondary-color: #f5f5dc;
+            --accent-color: #f5f5dc;
+            --white: #8B0000;
+            --gradient-primary: linear-gradient(135deg, #f5f5dc 0%, #f5f5dc 100%);
+            --gradient-secondary: linear-gradient(135deg, #f5f5dc 0%, #f5f5dc 100%);
+            background: var(--gold);
+            color: var(--gold);
+        }
+        body.dark-mode .page-wrapper,
+        body.dark-mode .page-content,
+        body.dark-mode .skills,
+        body.dark-mode .projects,
+        body.dark-mode .published-games,
+        body.dark-mode .contact,
+        body.dark-mode footer {
+            background: #8B0000 !important;
+            color: #f5f5dc !important;
+        }
+        body.dark-mode .project-card,
+        body.dark-mode .skill-card,
+        body.dark-mode .contact-form {
+            background: #8B0000 !important;
+            color: #f5f5dc !important;
+            border-color: #c2b280 !important;
+            box-shadow: 0 4px 6px -1px #c2b280, 0 2px 4px -2px #c2b280 !important;
+        }
+        body.dark-mode .project-dot {
+            background: rgba(139, 0, 0, 0.5);
+        }
+        body.dark-mode .project-dot.active {
+            background: #8B0000;
+        }
+        body.dark-mode .full-project-dot {
+            background: rgba(245, 245, 220, 0.5);
+        }
+        body.dark-mode .full-project-dot.active {
+            background: #f5f5dc;
+        }
+        body.dark-mode .nav-links a,
+        body.dark-mode .nav-social a,
+        body.dark-mode #darkModeToggle {
+            color: #f5f5dc !important;
+        }
+        body.dark-mode .cta-button,
+        body.dark-mode .submit-btn {
+            background: var(--gold);
+            color: #8B0000;
+        }
+        body.dark-mode .cta-button:hover,
+        body.dark-mode .submit-btn:hover {
+            background: #d4d4b0;
+            color: #8B0000;
+        }
+        body.dark-mode .game-links a,
+        body.dark-mode .project-links a {
+            background: var(--gold);
+            color: #8B0000;
+        }
+        body.dark-mode .game-links a:hover,
+        body.dark-mode .project-links a:hover {
+            background: #c2c2a0;
+            color: #8B0000;
+        }
+        body.dark-mode .game-tag {
+            background: #c2b280;
+            color: #8B0000;
+        }
+        body.dark-mode .logo-bg-nk {
+            color: #000000 !important;
+        }
+        body.dark-mode nav::before {
+            background: #8B0000;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.25), 0 0 0 8px #000000 inset;
+        }
+        body.dark-mode .page-wrapper {
+            border: 8px solid #000000 !important;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.25), 0 0 0 8px #000000 inset;
+        }
+        body.dark-mode .page-wrapper::before {
+            background: linear-gradient(135deg, #8B0000 0%, #8B0000 100%);
+        }
+        body.dark-mode .page-wrapper::after {
+            background-image: none;
+        }
+        body.dark-mode .hero {
+            background: linear-gradient(135deg, #8B0000 0%, #8B0000 100%);
+        }
+        body.dark-mode .game-image,
+        body.dark-mode .project-image {
+            background: var(--gradient-primary);
+        }
+        body.dark-mode .project-slide-content,
+        body.dark-mode .project-content,
+        body.dark-mode .game-content {
+            color: #f5f5dc !important;
+        }
+        body.dark-mode .form-group input,
+        body.dark-mode .form-group textarea {
+            background: #8B0000;
+            color: #f5f5dc;
+            border-color: #f5f5dc;
+        }
+        body.dark-mode .form-group input:focus,
+        body.dark-mode .form-group textarea:focus {
+            border-color: #f5f5dc;
+            box-shadow: 0 0 0 3px rgba(245, 245, 220, 0.1);
+        }
+        body.dark-mode .section-title,
+        body.dark-mode .section-subtitle {
+            color: #f5f5dc !important;
+        }
+        body.dark-mode .contact-item i,
+        body.dark-mode .social-links a {
+            color: #f5f5dc !important;
+        }
+        body.dark-mode .social-links a:hover {
+            color: #c2b280 !important;
+        }
+        body.dark-mode .nav-links a::after {
+            background: #f5f5dc;
+        }
+        body.dark-mode .nav-links a:hover::after {
+            background: #f5f5dc;
+        }
+        body.dark-mode .project-nav {
+            background: rgba(139, 0, 0, 0.7);
+            color: #f5f5dc;
+        }
+        body.dark-mode .project-nav:hover {
+            background: rgba(139, 0, 0, 0.9);
+        }
+        body.dark-mode .full-project-nav {
+            background: rgba(245, 245, 220, 0.7);
+            color: #8B0000 !important;
+        }
+        body.dark-mode .full-project-nav:hover {
+            background: rgba(245, 245, 220, 0.9);
+            color: #8B0000 !important;
+        }
+        body.dark-mode .game-image {
+            background: var(--gradient-primary);
+        }
+        body.dark-mode .project-image {
+            background: var(--gradient-secondary);
+        }
+        /* Force all other text to gold in dark mode (except nav bar and specific elements) */
+        body.dark-mode * {
+            color: var(--gold) !important;
+            border-color: var(--gold) !important;
+        }
+        /* Override specific elements that should not be gold */
+        body.dark-mode nav,
+        body.dark-mode .nav-links a,
+        body.dark-mode .nav-social a,
+        body.dark-mode #darkModeToggle,
+        body.dark-mode .skill-card i,
+        body.dark-mode .nav-social a i,
+        body.dark-mode #darkModeToggle i,
+        body.dark-mode .skill-card h3 {
+            color: #f5f5dc !important;
+        }
+        /* Override button text to be dark red */
+        body.dark-mode .cta-button,
+        body.dark-mode .submit-btn,
+        body.dark-mode .project-links a,
+        body.dark-mode .game-links a {
+            color: #8B0000 !important;
+        }
+        body.dark-mode .logo-bg-nk {
+            color: #000000 !important;
+        }
+        body.dark-mode .page-content {
+            border-color: #000000 !important;
+        }
+        body.dark-mode .game-card {
+            border-color: #c2b280 !important;
+            box-shadow: 0 4px 6px -1px #c2b280, 0 2px 4px -2px #c2b280 !important;
+        }
+        body.dark-mode .contact-info p,
+        body.dark-mode .contact-item span,
+        body.dark-mode .contact-item i {
+            color: var(--gold) !important;
+        }
+        /* Ensure intro button text is dark red */
+        body.dark-mode .hero .cta-button {
+            color: #8B0000 !important;
+        }
+        /* Ensure itch.io icons are dark red in dark mode */
+        body.dark-mode .project-links a i,
+        body.dark-mode .game-links a i {
+            color: #8B0000 !important;
+        }
+        /* Ensure project image icons are dark red in dark mode */
+        body.dark-mode .project-image i,
+        body.dark-mode .game-image i {
+            color: #8B0000 !important;
+        }
+        body.dark-mode .nav-social div {
+            background-color: #f5f5dc !important;
         }
     </style>
 </head>
@@ -934,8 +1138,12 @@
                             <li><a href="#contact">Contact</a></li>
                         </ul>
                         <div class="nav-social" style="display: flex; align-items: center; gap: 1rem; position: absolute; right: 0; top: 50%; transform: translateY(-50%);">
-                            <a href="https://www.linkedin.com/in/nima-khaloozadeh/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                            <a href="https://github.com/NimaKhh" target="_blank"><i class="fab fa-github"></i></a>
+                            <button id="darkModeToggle" aria-label="Toggle dark mode" style="background: none; border: none; cursor: pointer; font-size: 2.1rem; color: #8B0000; display: flex; align-items: center; justify-content: center; margin-right: -0.5rem;">
+                                <i class="fas fa-moon"></i>
+                            </button>
+                            <div style="width: 1px; height: 2rem; background-color: #8B0000; margin-left: 0.1rem;"></div>
+                            <a href="https://www.linkedin.com/in/nima-khaloozadeh/" target="_blank" style="margin-top: 0.15rem;"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://github.com/NimaKhh" target="_blank" style="margin-top: 0.15rem;"><i class="fab fa-github"></i></a>
                         </div>
                     </div>
                 </div>
@@ -1200,7 +1408,7 @@
                                             <h3><span style="float: right; margin-right: 0;">(2019)</span>Angry Birds Project</h3>
                                             <p>Final year capstone project that represents the culmination of all skills and knowledge acquired throughout the computer science degree program.</p>
                                             <div class="project-links">
-                                                <a href="https://nima-kh.itch.io/angry-birds-project" target="_blank"><i class="fab fa-itch-io"></i> Play on itch.io</a>
+                                                <a href="https://nima-kh.itch.io/angry-birds-project" target="_blank"><i class="fas fa-play"></i> Play on itch.io</a>
                                             </div>
                                         </div>
                                     </div>
@@ -1364,7 +1572,7 @@
                                             <h3><span style="float: right; margin-right: 0;">(2019)</span>Angry Birds Game</h3>
                                             <p>Final year capstone project that represents the culmination of all skills and knowledge acquired throughout the computer science degree program.</p>
                                             <div class="project-links">
-                                                <a href="https://nima-kh.itch.io/angry-birds-project" target="_blank"><i class="fab fa-itch-io"></i> Play on itch.io</a>
+                                                <a href="https://nima-kh.itch.io/angry-birds-project" target="_blank"><i class="fas fa-play"></i> Play on itch.io</a>
                                             </div>
                                         </div>
                                     </div>
@@ -1985,6 +2193,20 @@
         // Observe all cards and sections
         document.querySelectorAll('.project-card').forEach(el => {
             observer.observe(el);
+        });
+
+        // Dark mode toggle functionality
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const darkModeIcon = darkModeToggle.querySelector('i');
+        darkModeToggle.addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            if (document.body.classList.contains('dark-mode')) {
+                darkModeIcon.classList.remove('fa-moon');
+                darkModeIcon.classList.add('fa-sun');
+            } else {
+                darkModeIcon.classList.remove('fa-sun');
+                darkModeIcon.classList.add('fa-moon');
+            }
         });
     </script>
 </body>

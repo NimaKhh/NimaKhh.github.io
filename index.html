@@ -466,12 +466,12 @@
             flex-shrink: 0;
         }
 
-        /* Special styling for the last project (6 slides) */
-        .project-card:last-child .full-project-slides {
+        /* Special styling for the bachelor's studies project (6 slides) */
+        .project-card:nth-child(4) .full-project-slides {
             width: 600%; /* 6 slides */
         }
 
-        .project-card:last-child .full-project-slide {
+        .project-card:nth-child(4) .full-project-slide {
             width: 16.666%;
         }
 
@@ -707,12 +707,20 @@
             color: var(--text-primary);
             text-decoration: none;
             border-radius: 20px;
-            font-size: 0.85rem;
+            font-size: 0.95rem;
             font-weight: 500;
             transition: all 0.3s ease;
             display: flex;
             align-items: center;
             gap: 0.5rem;
+        }
+
+        .project-links a .fab.fa-itch-io {
+            font-size: 1.5rem;
+        }
+
+        .project-links a .fas.fa-play {
+            font-size: 1.3rem;
         }
 
         .project-links a:hover {
@@ -988,8 +996,7 @@
                                 <h3><span style="float: right; margin-right: 0;">(2025)</span>DirectX 12 Distributed 3D Physics Simulation</h3>
                                 <p>A custom 3D graphics engine built from scratch using OpenGL and C++. Features advanced lighting, particle systems, and real-time rendering capabilities.</p>
                                 <div class="project-links">
-                                    <a href="#"><i class="fab fa-github"></i> View Code</a>
-                                    <a href="#"><i class="fas fa-play"></i> Demo</a>
+                                    <a href="https://nima-kh.itch.io/directx12-net-sim?secret=D8jtB6MWrylVMGXDbTgT2Gnac" target="_blank"><i class="fab fa-itch-io"></i> View on itch.io</a>
                                 </div>
                             </div>
                         </div>
@@ -1030,8 +1037,7 @@
                                 <h3><span style="float: right; margin-right: 0;">(2024)</span>DirectX 11 2.5D Platformer</h3>
                                 <p>An interactive platform for teaching AI and machine learning concepts through gamified experiences. Built with React, Python, and TensorFlow.</p>
                                 <div class="project-links">
-                                    <a href="#"><i class="fab fa-github"></i> View Code</a>
-                                    <a href="#"><i class="fas fa-external-link-alt"></i> Live</a>
+                                    <a href="https://nima-kh.itch.io/directx11-platformer?secret=C6GTv9nbdW7c6mIyFQcaYR1xpk" target="_blank"><i class="fab fa-itch-io"></i> View on itch.io</a>
                                 </div>
                             </div>
                         </div>
@@ -1071,9 +1077,307 @@
                             <div class="project-content">
                                 <h3><span style="float: right; margin-right: 0;">(2024-2025)</span>Multiplayer VR Croquet Game</h3>
                                 <p>A cross-platform mobile game development framework that simplifies the creation of 2D and 3D games for iOS and Android platforms.</p>
-                                <div class="project-links">
-                                    <a href="#"><i class="fab fa-github"></i> View Code</a>
-                                    <a href="#"><i class="fas fa-book"></i> Docs</a>
+
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="full-project-carousel">
+                                <div class="full-project-slides">
+                                    <div class="full-project-slide">
+                                        <div class="project-carousel">
+                                            <div class="project-slides">
+                                                <div class="project-slide">
+                                                    <div class="project-image">
+                                                        <i class="fas fa-graduation-cap"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="project-slide">
+                                                    <div class="project-slide-content">
+                                                        <div>
+                                                            <h4>Academic Projects</h4>
+                                                            <p>Coursework and research projects developed during university studies</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="project-slide">
+                                                    <div class="project-slide-content">
+                                                        <div>
+                                                            <h4>Learning Journey</h4>
+                                                            <p>Progression of skills and techniques from beginner to advanced level</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button class="project-nav prev">‹</button>
+                                            <button class="project-nav next">›</button>
+                                            <div class="project-dots">
+                                                <span class="project-dot active"></span>
+                                                <span class="project-dot"></span>
+                                                <span class="project-dot"></span>
+                                            </div>
+                                        </div>
+                                        <div class="project-content">
+                                            <h3>Games I made throughout my bachelor's studies</h3>
+                                            <p>Collection of games and interactive projects created during my computer science degree, showcasing the evolution of my programming and game development skills.</p>
+                                        </div>
+                                    </div>
+                                    <div class="full-project-slide">
+                                        <div class="project-carousel">
+                                            <div class="project-slides">
+                                                <div class="project-slide">
+                                                    <div class="project-image">
+                                                        <i class="fas fa-code"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="project-slide">
+                                                    <div class="project-slide-content">
+                                                        <div>
+                                                            <h4>Programming Fundamentals</h4>
+                                                            <p>Core programming concepts and software engineering principles</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="project-slide">
+                                                    <div class="project-slide-content">
+                                                        <div>
+                                                            <h4>Data Structures</h4>
+                                                            <p>Efficient algorithms and data structure implementations</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button class="project-nav prev">‹</button>
+                                            <button class="project-nav next">›</button>
+                                            <div class="project-dots">
+                                                <span class="project-dot active"></span>
+                                                <span class="project-dot"></span>
+                                                <span class="project-dot"></span>
+                                            </div>
+                                        </div>
+                                        <div class="project-content">
+                                            <h3><span style="float: right; margin-right: 0;">(2018)</span>Jetpack Joyride Project</h3>
+                                            <p>Early programming projects that established foundational knowledge in computer science and software development principles.</p>
+                                            <div class="project-links">
+                                                <a href="https://nima-kh.itch.io/jetpack?secret=Bu5Q0kKu2fCZGxftWIaLUX8Q" target="_blank"><i class="fab fa-itch-io"></i> View on itch.io</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="full-project-slide">
+                                        <div class="project-carousel">
+                                            <div class="project-slides">
+                                                <div class="project-slide">
+                                                    <div class="project-image">
+                                                        <i class="fas fa-trophy"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="project-slide">
+                                                    <div class="project-slide-content">
+                                                        <div>
+                                                            <h4>Capstone Project</h4>
+                                                            <p>Comprehensive final year project showcasing all learned skills</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="project-slide">
+                                                    <div class="project-slide-content">
+                                                        <div>
+                                                            <h4>Research Integration</h4>
+                                                            <p>Academic research combined with practical implementation</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button class="project-nav prev">‹</button>
+                                            <button class="project-nav next">›</button>
+                                            <div class="project-dots">
+                                                <span class="project-dot active"></span>
+                                                <span class="project-dot"></span>
+                                                <span class="project-dot"></span>
+                                            </div>
+                                        </div>
+                                        <div class="project-content">
+                                            <h3><span style="float: right; margin-right: 0;">(2019)</span>Angry Birds Project</h3>
+                                            <p>Final year capstone project that represents the culmination of all skills and knowledge acquired throughout the computer science degree program.</p>
+                                            <div class="project-links">
+                                                <a href="https://nima-kh.itch.io/angry-birds-project" target="_blank"><i class="fas fa-play"></i> Play on itch.io</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="full-project-slide">
+                                        <div class="project-carousel">
+                                            <div class="project-slides">
+                                                <div class="project-slide">
+                                                    <div class="project-image">
+                                                        <i class="fas fa-gamepad"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="project-slide">
+                                                    <div class="project-slide-content">
+                                                        <div>
+                                                            <h4>Game Development</h4>
+                                                            <p>Interactive games and simulations for learning and entertainment</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="project-slide">
+                                                    <div class="project-slide-content">
+                                                        <div>
+                                                            <h4>Graphics Programming</h4>
+                                                            <p>Real-time rendering and visual effects implementation</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button class="project-nav prev">‹</button>
+                                            <button class="project-nav next">›</button>
+                                            <div class="project-dots">
+                                                <span class="project-dot active"></span>
+                                                <span class="project-dot"></span>
+                                                <span class="project-dot"></span>
+                                            </div>
+                                        </div>
+                                        <div class="project-content">
+                                            <h3><span style="float: right; margin-right: 0;">(2020)</span>Othello Project</h3>
+                                            <p>Interactive games and simulations that demonstrate practical application of computer graphics and game development concepts.</p>
+                                            <div class="project-links">
+                                                <a href="https://nima-kh.itch.io/othello-project?secret=K0ISAnNSOsPXoNmFgSF4XWSA" target="_blank"><i class="fab fa-itch-io"></i> View on itch.io</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="full-project-slide">
+                                        <div class="project-carousel">
+                                            <div class="project-slides">
+                                                <div class="project-slide">
+                                                    <div class="project-image">
+                                                        <i class="fas fa-mobile-alt"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="project-slide">
+                                                    <div class="project-slide-content">
+                                                        <div>
+                                                            <h4>Mobile Development</h4>
+                                                            <p>Cross-platform mobile applications and games</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="project-slide">
+                                                    <div class="project-slide-content">
+                                                        <div>
+                                                            <h4>User Experience</h4>
+                                                            <p>Intuitive interfaces and responsive design principles</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button class="project-nav prev">‹</button>
+                                            <button class="project-nav next">›</button>
+                                            <div class="project-dots">
+                                                <span class="project-dot active"></span>
+                                                <span class="project-dot"></span>
+                                                <span class="project-dot"></span>
+                                            </div>
+                                        </div>
+                                        <div class="project-content">
+                                            <h3><span style="float: right; margin-right: 0;">(2021)</span>TETRIS 8086 Project</h3>
+                                            <p>Mobile applications and games that explore touch interfaces, responsive design, and cross-platform development techniques.</p>
+                                            <div class="project-links">
+                                                <a href="https://nima-kh.itch.io/tetris-8086-project?secret=ZsiYPxQ6qIKvtcMcQ5dkSsRVmA" target="_blank"><i class="fab fa-itch-io"></i> View on itch.io</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="full-project-slide">
+                                        <div class="project-carousel">
+                                            <div class="project-slides">
+                                                <div class="project-slide">
+                                                    <div class="project-image">
+                                                        <i class="fas fa-brain"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="project-slide">
+                                                    <div class="project-slide-content">
+                                                        <div>
+                                                            <h4>AI Integration</h4>
+                                                            <p>Machine learning algorithms and intelligent game systems</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="project-slide">
+                                                    <div class="project-slide-content">
+                                                        <div>
+                                                            <h4>Advanced Concepts</h4>
+                                                            <p>Complex algorithms and cutting-edge technology implementation</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button class="project-nav prev">‹</button>
+                                            <button class="project-nav next">›</button>
+                                            <div class="project-dots">
+                                                <span class="project-dot active"></span>
+                                                <span class="project-dot"></span>
+                                                <span class="project-dot"></span>
+                                            </div>
+                                        </div>
+                                        <div class="project-content">
+                                            <h3><span style="float: right; margin-right: 0;">(2023)</span>PUXXLE! (2D Jigsaw Puzzle Game)</h3>
+                                            <p>Advanced projects incorporating artificial intelligence, machine learning, and sophisticated algorithms to create intelligent game experiences.</p>
+                                            <div class="project-links">
+                                                <a href="https://nima-kh.itch.io/puxxle?secret=Rq0J917V2dLJ3RSymcjE9eROFfU" target="_blank"><i class="fab fa-itch-io"></i> View on itch.io</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="full-project-slide">
+                                        <div class="project-carousel">
+                                            <div class="project-slides">
+                                                <div class="project-slide">
+                                                    <div class="project-image">
+                                                        <i class="fas fa-trophy"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="project-slide">
+                                                    <div class="project-slide-content">
+                                                        <div>
+                                                            <h4>Capstone Project</h4>
+                                                            <p>Comprehensive final year project showcasing all learned skills</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="project-slide">
+                                                    <div class="project-slide-content">
+                                                        <div>
+                                                            <h4>Research Integration</h4>
+                                                            <p>Academic research combined with practical implementation</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button class="project-nav prev">‹</button>
+                                            <button class="project-nav next">›</button>
+                                            <div class="project-dots">
+                                                <span class="project-dot active"></span>
+                                                <span class="project-dot"></span>
+                                                <span class="project-dot"></span>
+                                            </div>
+                                        </div>
+                                        <div class="project-content">
+                                            <h3><span style="float: right; margin-right: 0;">(2019)</span>Angry Birds Game</h3>
+                                            <p>Final year capstone project that represents the culmination of all skills and knowledge acquired throughout the computer science degree program.</p>
+                                            <div class="project-links">
+                                                <a href="https://nima-kh.itch.io/angry-birds-project" target="_blank"><i class="fab fa-itch-io"></i> Play on itch.io</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="full-project-nav prev">‹</button>
+                                <button class="full-project-nav next">›</button>
+                                <div class="full-project-dots">
+                                    <span class="full-project-dot active"></span>
+                                    <span class="full-project-dot"></span>
+                                    <span class="full-project-dot"></span>
+                                    <span class="full-project-dot"></span>
+                                    <span class="full-project-dot"></span>
+                                    <span class="full-project-dot"></span>
                                 </div>
                             </div>
                         </div>
@@ -1116,10 +1420,6 @@
                                         <div class="project-content">
                                             <h3>Game Jam Games</h3>
                                             <p>Collection of games created during various game jams, showcasing rapid prototyping skills and creative problem-solving under time constraints.</p>
-                                            <div class="project-links">
-                                                <a href="#"><i class="fab fa-github"></i> View Code</a>
-                                                <a href="#"><i class="fas fa-play"></i> Play</a>
-                                            </div>
                                         </div>
                                     </div>
                                     <div class="full-project-slide">
@@ -1159,8 +1459,7 @@
                                             <h3><span style="float: right; margin-right: 0;">(2025)</span>Bubble Up!</h3>
                                             <p>Fast-paced game development challenges that test creativity, technical skills, and ability to deliver complete experiences under pressure.</p>
                                             <div class="project-links">
-                                                <a href="#"><i class="fab fa-github"></i> View Code</a>
-                                                <a href="#"><i class="fas fa-users"></i> Team</a>
+                                                <a href="https://nima-kh.itch.io/bubble-up" target="_blank"><i class="fas fa-play"></i> Play on itch.io</a>
                                             </div>
                                         </div>
                                     </div>
@@ -1201,8 +1500,7 @@
                                             <h3><span style="float: right; margin-right: 0;">(2025)</span>Entropy Game</h3>
                                             <p>Award-winning entries and innovative concepts that demonstrate creative thinking and technical execution in competitive game development.</p>
                                             <div class="project-links">
-                                                <a href="#"><i class="fab fa-github"></i> View Code</a>
-                                                <a href="#"><i class="fas fa-award"></i> Awards</a>
+                                                <a href="https://nima-kh.itch.io/entropy-game" target="_blank"><i class="fas fa-play"></i> Play on itch.io</a>
                                             </div>
                                         </div>
                                     </div>
@@ -1211,316 +1509,6 @@
                                 <button class="full-project-nav next">›</button>
                                 <div class="full-project-dots">
                                     <span class="full-project-dot active"></span>
-                                    <span class="full-project-dot"></span>
-                                    <span class="full-project-dot"></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="project-card">
-                            <div class="full-project-carousel">
-                                <div class="full-project-slides">
-                                    <div class="full-project-slide">
-                                        <div class="project-carousel">
-                                            <div class="project-slides">
-                                                <div class="project-slide">
-                                                    <div class="project-image">
-                                                        <i class="fas fa-graduation-cap"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="project-slide">
-                                                    <div class="project-slide-content">
-                                                        <div>
-                                                            <h4>Academic Projects</h4>
-                                                            <p>Coursework and research projects developed during university studies</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="project-slide">
-                                                    <div class="project-slide-content">
-                                                        <div>
-                                                            <h4>Learning Journey</h4>
-                                                            <p>Progression of skills and techniques from beginner to advanced level</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <button class="project-nav prev">‹</button>
-                                            <button class="project-nav next">›</button>
-                                            <div class="project-dots">
-                                                <span class="project-dot active"></span>
-                                                <span class="project-dot"></span>
-                                                <span class="project-dot"></span>
-                                            </div>
-                                        </div>
-                                        <div class="project-content">
-                                            <h3>Games I made throughout my bachelor's studies</h3>
-                                            <p>Collection of games and interactive projects created during my computer science degree, showcasing the evolution of my programming and game development skills.</p>
-                                            <div class="project-links">
-                                                <a href="#"><i class="fab fa-github"></i> View Code</a>
-                                                <a href="#"><i class="fas fa-book"></i> Portfolio</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="full-project-slide">
-                                        <div class="project-carousel">
-                                            <div class="project-slides">
-                                                <div class="project-slide">
-                                                    <div class="project-image">
-                                                        <i class="fas fa-code"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="project-slide">
-                                                    <div class="project-slide-content">
-                                                        <div>
-                                                            <h4>Programming Fundamentals</h4>
-                                                            <p>Core programming concepts and software engineering principles</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="project-slide">
-                                                    <div class="project-slide-content">
-                                                        <div>
-                                                            <h4>Data Structures</h4>
-                                                            <p>Efficient algorithms and data structure implementations</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <button class="project-nav prev">‹</button>
-                                            <button class="project-nav next">›</button>
-                                            <div class="project-dots">
-                                                <span class="project-dot active"></span>
-                                                <span class="project-dot"></span>
-                                                <span class="project-dot"></span>
-                                            </div>
-                                        </div>
-                                        <div class="project-content">
-                                            <h3><span style="float: right; margin-right: 0;">(2018)</span>Jetpack Joyride Game</h3>
-                                            <p>Early programming projects that established foundational knowledge in computer science and software development principles.</p>
-                                            <div class="project-links">
-                                                <a href="#"><i class="fab fa-github"></i> View Code</a>
-                                                <a href="#"><i class="fas fa-laptop-code"></i> Code</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="full-project-slide">
-                                        <div class="project-carousel">
-                                            <div class="project-slides">
-                                                <div class="project-slide">
-                                                    <div class="project-image">
-                                                        <i class="fas fa-trophy"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="project-slide">
-                                                    <div class="project-slide-content">
-                                                        <div>
-                                                            <h4>Capstone Project</h4>
-                                                            <p>Comprehensive final year project showcasing all learned skills</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="project-slide">
-                                                    <div class="project-slide-content">
-                                                        <div>
-                                                            <h4>Research Integration</h4>
-                                                            <p>Academic research combined with practical implementation</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <button class="project-nav prev">‹</button>
-                                            <button class="project-nav next">›</button>
-                                            <div class="project-dots">
-                                                <span class="project-dot active"></span>
-                                                <span class="project-dot"></span>
-                                                <span class="project-dot"></span>
-                                            </div>
-                                        </div>
-                                        <div class="project-content">
-                                            <h3><span style="float: right; margin-right: 0;">(2019)</span>Angry Birds Game</h3>
-                                            <p>Final year capstone project that represents the culmination of all skills and knowledge acquired throughout the computer science degree program.</p>
-                                            <div class="project-links">
-                                                <a href="#"><i class="fab fa-github"></i> View Code</a>
-                                                <a href="#"><i class="fas fa-star"></i> Capstone</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="full-project-slide">
-                                        <div class="project-carousel">
-                                            <div class="project-slides">
-                                                <div class="project-slide">
-                                                    <div class="project-image">
-                                                        <i class="fas fa-gamepad"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="project-slide">
-                                                    <div class="project-slide-content">
-                                                        <div>
-                                                            <h4>Game Development</h4>
-                                                            <p>Interactive games and simulations for learning and entertainment</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="project-slide">
-                                                    <div class="project-slide-content">
-                                                        <div>
-                                                            <h4>Graphics Programming</h4>
-                                                            <p>Real-time rendering and visual effects implementation</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <button class="project-nav prev">‹</button>
-                                            <button class="project-nav next">›</button>
-                                            <div class="project-dots">
-                                                <span class="project-dot active"></span>
-                                                <span class="project-dot"></span>
-                                                <span class="project-dot"></span>
-                                            </div>
-                                        </div>
-                                        <div class="project-content">
-                                            <h3><span style="float: right; margin-right: 0;">(2020)</span>Othello Board Game</h3>
-                                            <p>Interactive games and simulations that demonstrate practical application of computer graphics and game development concepts.</p>
-                                            <div class="project-links">
-                                                <a href="#"><i class="fab fa-github"></i> View Code</a>
-                                                <a href="#"><i class="fas fa-play"></i> Play</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="full-project-slide">
-                                        <div class="project-carousel">
-                                            <div class="project-slides">
-                                                <div class="project-slide">
-                                                    <div class="project-image">
-                                                        <i class="fas fa-mobile-alt"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="project-slide">
-                                                    <div class="project-slide-content">
-                                                        <div>
-                                                            <h4>Mobile Development</h4>
-                                                            <p>Cross-platform mobile applications and games</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="project-slide">
-                                                    <div class="project-slide-content">
-                                                        <div>
-                                                            <h4>User Experience</h4>
-                                                            <p>Intuitive interfaces and responsive design principles</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <button class="project-nav prev">‹</button>
-                                            <button class="project-nav next">›</button>
-                                            <div class="project-dots">
-                                                <span class="project-dot active"></span>
-                                                <span class="project-dot"></span>
-                                                <span class="project-dot"></span>
-                                            </div>
-                                        </div>
-                                        <div class="project-content">
-                                            <h3><span style="float: right; margin-right: 0;">(2021)</span>TETRIS 8086</h3>
-                                            <p>Mobile applications and games that explore touch interfaces, responsive design, and cross-platform development techniques.</p>
-                                            <div class="project-links">
-                                                <a href="#"><i class="fab fa-github"></i> View Code</a>
-                                                <a href="#"><i class="fab fa-android"></i> Mobile</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="full-project-slide">
-                                        <div class="project-carousel">
-                                            <div class="project-slides">
-                                                <div class="project-slide">
-                                                    <div class="project-image">
-                                                        <i class="fas fa-brain"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="project-slide">
-                                                    <div class="project-slide-content">
-                                                        <div>
-                                                            <h4>AI Integration</h4>
-                                                            <p>Machine learning algorithms and intelligent game systems</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="project-slide">
-                                                    <div class="project-slide-content">
-                                                        <div>
-                                                            <h4>Advanced Concepts</h4>
-                                                            <p>Complex algorithms and cutting-edge technology implementation</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <button class="project-nav prev">‹</button>
-                                            <button class="project-nav next">›</button>
-                                            <div class="project-dots">
-                                                <span class="project-dot active"></span>
-                                                <span class="project-dot"></span>
-                                                <span class="project-dot"></span>
-                                            </div>
-                                        </div>
-                                        <div class="project-content">
-                                            <h3><span style="float: right; margin-right: 0;">(2023)</span>PUXXLE! (2D Jigsaw Puzzle Game)</h3>
-                                            <p>Advanced projects incorporating artificial intelligence, machine learning, and sophisticated algorithms to create intelligent game experiences.</p>
-                                            <div class="project-links">
-                                                <a href="#"><i class="fab fa-github"></i> View Code</a>
-                                                <a href="#"><i class="fas fa-robot"></i> AI</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="full-project-slide">
-                                        <div class="project-carousel">
-                                            <div class="project-slides">
-                                                <div class="project-slide">
-                                                    <div class="project-image">
-                                                        <i class="fas fa-trophy"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="project-slide">
-                                                    <div class="project-slide-content">
-                                                        <div>
-                                                            <h4>Capstone Project</h4>
-                                                            <p>Comprehensive final year project showcasing all learned skills</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="project-slide">
-                                                    <div class="project-slide-content">
-                                                        <div>
-                                                            <h4>Research Integration</h4>
-                                                            <p>Academic research combined with practical implementation</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <button class="project-nav prev">‹</button>
-                                            <button class="project-nav next">›</button>
-                                            <div class="project-dots">
-                                                <span class="project-dot active"></span>
-                                                <span class="project-dot"></span>
-                                                <span class="project-dot"></span>
-                                            </div>
-                                        </div>
-                                        <div class="project-content">
-                                            <h3><span style="float: right; margin-right: 0;">(2019)</span>Angry Birds Game</h3>
-                                            <p>Final year capstone project that represents the culmination of all skills and knowledge acquired throughout the computer science degree program.</p>
-                                            <div class="project-links">
-                                                <a href="#"><i class="fab fa-github"></i> View Code</a>
-                                                <a href="#"><i class="fas fa-star"></i> Capstone</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <button class="full-project-nav prev">‹</button>
-                                <button class="full-project-nav next">›</button>
-                                <div class="full-project-dots">
-                                    <span class="full-project-dot active"></span>
-                                    <span class="full-project-dot"></span>
-                                    <span class="full-project-dot"></span>
-                                    <span class="full-project-dot"></span>
                                     <span class="full-project-dot"></span>
                                     <span class="full-project-dot"></span>
                                 </div>
